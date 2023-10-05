@@ -1,0 +1,30 @@
+
+<main class="">
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-3">
+      <div class="col-lg-7 text-center text-lg-start mb-3">
+        <figure>
+          
+          <img src="https://pixabay.com/get/g78f7f808486036857075419e288dee7e7be2c296c6a932698783d34e47ee3ccd30077e7ffc10ba6e46f562eb3d3cadb4383309c4b0d1ddb6c3251661f3dea3db50603ab3c366549d6c96e13b62e1762e_1280.jpg?attachment=" />
+        </figure>
+        <h1 class="display-4">NBA Players</h1>
+        <p class="lead col-lg-10 fs-4">Check out the NBA players.</p>
+      </div>
+
+      <div class="col-md-10 mx-auto col-lg-5 mb-5">
+        <ul class="list-group">
+          <% players.forEach(function(player) { %>
+            <li class="list-group-item">
+              <h4><%= player.name %></h4>
+              <p><strong>Team:</strong> <%= player.team %></p
+              <p><strong>Position:</strong> <%= player.position %></p>
+              <p><strong>Age:</strong> <%= player.age %></p>
+              <p><strong>Height:</strong> <%= player.height.feet %> feet <%= player.height.inches %> inches</p>
+              <p><strong>Weight:</strong> <%= player.weight %> lbs</p>
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
