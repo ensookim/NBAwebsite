@@ -1,4 +1,7 @@
 {
+  "homepage": "https://github.com/ensookim.github.io/NBAweb",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "name": "my firt website",
   "version": "1.0.0",
   "description": "A website using Express",
