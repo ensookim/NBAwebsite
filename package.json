@@ -1,12 +1,12 @@
 {
-  "homepage": "https://github.com/ensookim.github.io/NBAweb",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
-  "name": "my firt website",
+  "homepage":"https://ensookim.github.io/NBAwebsite/views/_pages/about.ejs",
+  "name": "myirtwebsite",
   "version": "1.0.0",
   "description": "A website using Express",
   "main": "app.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "jest",
     "start": "nodemon app.js"
   },
