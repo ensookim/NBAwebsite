@@ -1,4 +1,8 @@
-
-# First Web Project
-
-이 웹은 2023.3.7~2023.5.7 기간동안 만들었습니다.
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="0;url=Views/index.ejs">
+</head>
+<body>
+</body>
+</html>
