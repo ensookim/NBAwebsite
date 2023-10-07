@@ -2,6 +2,11 @@
 
 NBA WORLD는 웹 프로그래밍 응용 수업에서 진행한 개인 프로젝트입니다. NBA를 정말 좋아해서 이 웹 페이지를 만들어서 다른 사람들에게 공유하고자 했습니다.
 
+## 프로잭트 구성
+
+![스크린샷0](![image](https://github.com/ensookim/NBAwebsite/assets/110519907/5edd00d0-fbaf-4aac-874d-b72257232c34)
+)
+
 ## 기술
 - Node.js
 - Express
