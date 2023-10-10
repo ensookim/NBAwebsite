@@ -140,8 +140,7 @@ router.get("/users/logout",
   usersController.redirectView
 );
 
- * Users
- */
+
 
 router.get("/users", usersController.index, usersController.indexView); // index 라우트 생성
 router.get("/users/new", usersController.new); // 생성 폼을 보기 위한 요청 처리
