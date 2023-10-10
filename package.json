@@ -1,5 +1,5 @@
 {
-  "homepage":"https://ensookim.github.io/NBAwebsite/views/_pages/about.ejs",
+  "homepage": "https://ensookim.github.io/NBAwebsite",
   "name": "myirtwebsite",
   "version": "1.0.0",
   "description": "A website using Express",
@@ -28,12 +28,11 @@
     "method-override": "^3.0.0",
     "mongodb": "^5.2.0",
     "mongoose": "^7.0.3",
-    "nba": "^4.15.0",
     "nba-greatest-players-list": "^1.0.0",
     "passport": "^0.6.0",
     "passport-local-mongoose": "^8.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.21"
+    "nodemon": "^3.0.1"
   }
 }
