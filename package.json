@@ -8,12 +8,12 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "jest",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "Kim en soo",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.6.0",
     "bcrypt": "^5.1.0",
     "cheerio": "^1.0.0-rc.12",
     "connect-flash": "^0.1.1",

@@ -12,6 +12,9 @@ const express = require("express"), // express를 요청
   layouts = require("express-ejs-layouts"), // express-ejs-layout의 요청
   app = express(), // express 애플리케이션의 인스턴스화
   methodOverride = require("method-override");
+const axios = require("axios");
+const cheerio = require("cheerio");
+
 // controllers 폴더의 파일을 요청
 const pagesController = require("./controllers/pagesController"),
   usersController = require("./controllers/usersController"),
@@ -26,6 +29,39 @@ const expressSession = require("express-session"),
   passportLocalMongoose = require('passport-local-mongoose');
 
 
+//크롤링
+
+
+// const getNBAGameData = async () => {
+//   try {
+//     const html = await axios.get("https://www.nba.com/games");
+
+//     //HTML을 파싱
+//     const $ = cheerio.load(html.data);
+
+//     // 임 결과를 저장할 배열
+//     const gameResults = [];
+
+//     $("tr.list").each((i, element) => {
+//       //각 게임 결과의 요소를 추출
+//       const gameResult = {
+//         homeTeam: $(element).find(".home-team").text().trim(),
+//         awayTeam: $(element).find(".away-team").text().trim(),
+//         homeScore: $(element).find(".home-score").text().trim(),
+//         awayScore: $(element).find(".away-score").text().trim(),
+//       };
+
+//       //배열에 추가
+//       gameResults.push(gameResult);
+//     });
+
+//     // 배열을 출력
+//     console.log("Today's NBA Game Results:");
+//     console.log(gameResults);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
 
 /**
  * 
