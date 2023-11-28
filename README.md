@@ -1,3 +1,13 @@
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&text=FirstWeb_NBA!&animation=fadeIn&fontColor=ffffff&fontSize=60" />    
+
+  
+
+<img src="https://img.shields.io/badge/JavaScript-22773?style=flat-square&logo=javascript&logoColor=white"> <img src="https://img.shields.io/badge/Node.js-172851?style=flat-square&logo=nodejs&logoColor=white"> <img src="https://img.shields.io/badge/mongoDB-472851?style=flat-square&logo=mongodb&logoColor=white"></div>
+
+
+
+
 # NBA WORLD (first website project) 
 
 NBA WORLD는 웹 프로그래밍 응용 수업에서 진행한 개인 프로젝트입니다. NBA를 정말 좋아해서 이 웹 페이지를 만들어서 다른 사람들에게 공유하고자 했습니다.
