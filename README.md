@@ -3,7 +3,7 @@
 
   
 
-<img src="https://img.shields.io/badge/JavaScript-22773?style=flat-square&logo=javascript&logoColor=white"> <img src="https://img.shields.io/badge/Node.js-172851?style=flat-square&logo=nodejs&logoColor=white"> <img src="https://img.shields.io/badge/mongoDB-472851?style=flat-square&logo=mongodb&logoColor=white"></div>
+<img src="https://img.shields.io/badge/JavaScript-22773?style=flat-square&logo=javascript&logoColor=white"> <img src="https://img.shields.io/badge/Node.js-227733?style=flat-square&logo=nodejs&logoColor=white"> <img src="https://img.shields.io/badge/mongoDB-472851?style=flat-square&logo=mongodb&logoColor=white"></div>
 
 
 
