@@ -11,53 +11,53 @@ REST API 를 구현하여 클라이언트 요청을 받아서 처리하고, 데�
 
 ## 프로잭트 구성
 
---- 
 
-|-- controllers
-    |-- errorController.js
-    |-- nbaController.js
-    |-- pagesController.js
-    |-- subscribersController.js
-    |-- talksController.js
-    |-- teamsController.js
-    |-- usersController.js
-|-- models
-    |-- NbaPlayers.js
-    |-- subscriber.js
-    |-- Talk.js
-    |-- Teams.js
-    |-- User.js
-|-- views
-    |-- nbaplayers
-        |-- edit.ejs
-        |-- index.ejs
-        |-- new.ejs
-    |-- teams
-        |-- edit.ejs
-        |-- index.ejs
-    |-- users
-        |-- edit.ejs
-        |-- index.ejs
-        |-- login.ejs
-        |-- new.ejs
-        |-- show.ejs
-    |-- _pages
-        |-- 404.ejs
-        |-- 500.ejs
-        |-- about.ejs
-    |-- _partials
-        |-- _confetti.ejs
-        |-- _flashMsg.ejs
-        |-- _footer.ejs
-        |-- _header.ejs
-        |-- _navigation.ejs
-    |-- index.ejs
-    |-- layout.ejs
-|-- .gitignore
-|-- app.js
-|-- package-lock.json
-|-- package.json
-|-- README.md
+
+|-- controllers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- errorController.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- nbaController.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- pagesController.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- subscribersController.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- talksController.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- teamsController.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- usersController.js<br>
+|-- models<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- NbaPlayers.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- subscriber.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- Talk.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- Teams.js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- User.js<br>
+|-- views<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- nbaplayers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- edit.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- index.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- new.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- teams<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- edit.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- index.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- users<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- edit.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- index.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- login.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- new.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- show.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- _pages<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- 404.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- 500.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- about.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- _partials<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- _confetti.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- _flashMsg.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- _footer.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- _header.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- _navigation.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- index.ejs<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|-- layout.ejs<br>
+|-- .gitignore<br>
+|-- app.js<br>
+|-- package-lock.json<br>
+|-- package.json<br>
+|-- README.md<br>
 
 )
 
