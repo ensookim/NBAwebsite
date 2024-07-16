@@ -1,0 +1,20 @@
+
+
+<div class="player-grid">
+  <% players.forEach(function(player) { %>
+    <div class="player-card">
+      <img src="<%= player.image %>" alt="<%= player.name %> Headshot" class="player-image">
+      <strong>Name:</strong> <%= player.name %><br>
+        <!-- <a href="/players/ <%= player.id %>">
+          <%= player.name %><br>
+        </a> -->
+      <strong>Team:</strong> <%= player.team %><br>
+      <strong>Position:</strong> <%= player.position %><br>
+      <strong>Height:</strong> <%= player.height %><br>
+      <strong>Weight:</strong> <%= player.weight %><br>
+    </div>
+  <% }); %>
+</div>
+
+
+

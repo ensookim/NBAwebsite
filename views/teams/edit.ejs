@@ -1,0 +1,14 @@
+<div class="data-form">
+  <form class="form-signin" action="/teams/<%= team._id %>/update" method="post">
+    <h2 class="form-signin-heading">Edit team:</h2>
+    <label for="inputName">Name</label>
+    <input type="text" name="name" id="inputName" class="form-control" value="<%= team.name %>" placeholder="Title" autofocus>
+    <label for="inputCity">City</label>
+    <input type="text" name="city" id="inputCity" class="form-control" value="<%= team.city %>" placeholder="city">
+    <label for="inputRegion">region</label>
+    <input type="text" name="region" id="inputRegion" pattern="West|East" class="form-control" value="<%= team.region %>" placeholder="region">
+    <input type="hidden" name="id" value="<%=team._id%>">
+    <br />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+  </form>
+</div>
