@@ -11,7 +11,53 @@ REST API 를 구현하여 클라이언트 요청을 받아서 처리하고, 데�
 
 ## 프로잭트 구성
 
-![image](https://github.com/ensookim/NBAwebsite/assets/110519907/1cb8b872-ef67-49d7-969a-865800bfbb6c)
+--- 
+
+|-- controllers
+    |-- errorController.js
+    |-- nbaController.js
+    |-- pagesController.js
+    |-- subscribersController.js
+    |-- talksController.js
+    |-- teamsController.js
+    |-- usersController.js
+|-- models
+    |-- NbaPlayers.js
+    |-- subscriber.js
+    |-- Talk.js
+    |-- Teams.js
+    |-- User.js
+|-- views
+    |-- nbaplayers
+        |-- edit.ejs
+        |-- index.ejs
+        |-- new.ejs
+    |-- teams
+        |-- edit.ejs
+        |-- index.ejs
+    |-- users
+        |-- edit.ejs
+        |-- index.ejs
+        |-- login.ejs
+        |-- new.ejs
+        |-- show.ejs
+    |-- _pages
+        |-- 404.ejs
+        |-- 500.ejs
+        |-- about.ejs
+    |-- _partials
+        |-- _confetti.ejs
+        |-- _flashMsg.ejs
+        |-- _footer.ejs
+        |-- _header.ejs
+        |-- _navigation.ejs
+    |-- index.ejs
+    |-- layout.ejs
+|-- .gitignore
+|-- app.js
+|-- package-lock.json
+|-- package.json
+|-- README.md
 
 )
 
@@ -34,27 +80,30 @@ REST API 를 구현하여 클라이언트 요청을 받아서 처리하고, 데�
 ## 스크린샷
 #### Home 
 
-![web1](https://github.com/ensookim/NBAwebsite/assets/110519907/11f1636b-e318-44ae-aec1-6024f38da6b1)
+
+![main](https://github.com/user-attachments/assets/d2c0ff68-775a-4268-ada8-4daba45a1d6c)
+
+
+#### About
+
+![About](https://github.com/user-attachments/assets/e2b22383-ea8d-449d-af48-8d8307d62631)
+
 
 
 #### Players
 
-![players](https://github.com/ensookim/NBAwebsite/assets/110519907/673f85cb-67f3-4eba-b7fb-61fc20b1cfaa)
+![Players](https://github.com/user-attachments/assets/66773670-1610-4147-8f9d-d57ecf15f9c4)
 
 
 #### Teams
 
-![web2](https://github.com/ensookim/NBAwebsite/assets/110519907/03062243-b7ba-477d-a678-84f4ce6be550)
+![Teams](https://github.com/user-attachments/assets/4ca4fca5-9a49-45d5-8ceb-063f89b92f8b)
 
-
-#### Edit
-
-![edit](https://github.com/ensookim/NBAwebsite/assets/110519907/0ecba99e-9386-4561-b65c-206b7f83296c)
 
 
 #### Login
 
-![login](https://github.com/ensookim/NBAwebsite/assets/110519907/81213d5d-7b07-4f7e-8c38-7adbf94c3554)
+![Longin](https://github.com/user-attachments/assets/9496ddbc-28f4-4734-b891-c25a290fb7cc)
 
 
 
