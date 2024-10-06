@@ -1,20 +1,16 @@
-
-
 <div class="player-grid">
   <% players.forEach(function(player) { %>
     <div class="player-card">
       <img src="<%= player.image %>" alt="<%= player.name %> Headshot" class="player-image">
       <strong>Name:</strong> <%= player.name %><br>
-        <!-- <a href="/players/ <%= player.id %>">
-          <%= player.name %><br>
-        </a> -->
       <strong>Team:</strong> <%= player.team %><br>
       <strong>Position:</strong> <%= player.position %><br>
       <strong>Height:</strong> <%= player.height %><br>
       <strong>Weight:</strong> <%= player.weight %><br>
+
+      <!-- NBA 기록 보기 링크 추가 -->
+      <a href="https://www.nba.com/player/<%= player.playerId %>/<%= player.name.replace(/ /g, '-').toLowerCase() %>" 
+         class="btn btn-info" target="_blank">View Stats on NBA</a>
     </div>
   <% }); %>
 </div>
-
-
-

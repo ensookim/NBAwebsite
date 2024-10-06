@@ -24,7 +24,10 @@ const playerSchema = mongoose.Schema({
   weight: {
     type: String,
     required: false
-  }
+  },
+  playerId: { 
+    type: String, required: true 
+  } 
 });
 
 const Player = mongoose.model("Player", playerSchema);

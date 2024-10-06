@@ -1,10 +1,6 @@
 // controllers/subscribersController.js
 "use strict";
 
-/**
- * Listing 16.4 (p. 230-231)
- * 구독자를 위한 컨트롤러 액션 정의
- */
 // 구독자 모델 요청
 const Subscriber = require("../models/Subscriber");
 
