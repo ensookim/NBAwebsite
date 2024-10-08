@@ -1,76 +1,83 @@
-"use strict";
+const axios = require('axios'); // axios 모듈 가져오기
+const cheerio = require('cheerio'); // cheerio 모듈 가져오기
+const mongoose = require('mongoose'); // mongoose 모듈 가져오기
+const Team = require('../models/Teams'); // Teams 모델 가져오기
 
-const mongoose = require("mongoose");
-const axios = require("axios");
-const Teams = require("../models/Teams"); // 팀 모델
-const cheerio = require("cheerio");
-
-// 데이터베이스 연결 설정
-mongoose.connect("mongodb://127.0.0.1:27017/ut-nodejs", {
+// MongoDB 연결 설정
+mongoose.connect('mongodb://127.0.0.1:27017/ut-nodejs', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-// 데이터베이스 연결 확인
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
-db.once("open", () => {
-  console.log("DB 연결완료...");
-});
-
-// 크롤링하고 DB에 저장
+// 크롤링 함수
 const crawlAndSaveTeams = async () => {
   try {
-    console.log("크롤링 시작...");
-    const url = "https://www.nba.com/teams";
-    const response = await axios.get(url);
-    const html = response.data;
-    const $ = cheerio.load(html);
+    console.log('크롤링 시작...');
+    const url = 'https://www.nba.com/teams';
+    const { data: html } = await axios.get(url); // axios로 페이지 가져오기
+    const $ = cheerio.load(html); // cheerio로 HTML 로드
 
     const teams = [];
 
     // 각 팀의 정보 추출
-    $("div.TeamFigure_tfMain").each((index, element) => {
-      // 팀 로고 이미지 URL 추출
-      const teamImage = $(element).find("img.TeamLogo_logo__PclAJ").attr("src"); 
+    $('div.TeamDivisions_divisionTeams__N6vcW').each((index, element) => {
+      // 각 팀 요소를 찾기
+      $(element).find('.TeamFigure_tf__jA5HW').each((i, teamElement) => {
+        // 팀 로고 이미지 URL 추출
+        const teamImage = $(teamElement).find('img.TeamLogo_logo__PclAJ').attr('src');
+        console.log('로고:', teamImage);
 
-      // 팀 이름 추출
-      const teamNameElement = $(element).find("a.TeamFigure_tfMainLink__OPLFu");
-      const teamName = teamNameElement.text().trim(); 
+        // 팀 이름 추출
+        const teamNameElement = $(teamElement).find('a.TeamFigure_tfMainLink__OPLFu');
+        const teamName = teamNameElement.text().trim();
+        console.log('팀 이름:', teamName);
 
-      // 팀 ID 추출
-      const teamIdMatch = teamImage.match(/nba\/(\d+)\//); // 이미지 URL에서 팀 ID 추출
-      const teamId = teamIdMatch ? teamIdMatch[1] : null; // ID가 없으면 null
+        // 팀 ID 추출 (이미지 URL에서 중간 숫자 부분 추출)
+        const teamIdMatch = teamImage.match(/nba\/(\d+)\/primary/); // 정규 표현식으로 ID 추출
+        const teamId = teamIdMatch ? teamIdMatch[1] : null;
+        console.log('팀 ID:', teamId);
 
-      // 유효한 팀 정보인지 확인
-      if (teamId && teamName && teamImage) {
-        const team = {
-          name: teamName,
-          image: teamImage,
-          Id: teamId,
-          region: '' // 지역 정보는 추가적으로 크롤링할 수 있습니다.
-        };
+        // 팀 지역 정보 추출
+        const regionElement = $(element).prev('.TeamDivisions_divisionName__KFlSk');
+        const region = regionElement.text().trim();
+        console.log('지역:', region);
 
-        teams.push(team);
-      } else {
-        console.log(`팀 정보가 유효하지 않습니다: ${teamName}, ID: ${teamId}`);
-      }
+        // 유효한 팀 정보 확인
+        if (teamId && teamName && teamImage && region) {
+          teams.push({
+            name: teamName,
+            image: teamImage,
+            Id: teamId,
+            region: region,
+          });
+        } else {
+          console.log(`팀 정보가 유효하지 않습니다: ${teamName}, ID: ${teamId}, Region: ${region}`);
+        }
+      });
     });
 
-    console.log("크롤링한 팀 데이터:", teams); // 크롤링한 팀 데이터를 출력
+    // 크롤링한 팀 데이터 출력
+    console.log('크롤링한 팀 데이터:', teams);
 
-    // DB에 팀 정보 저장
+    // DB에 팀 정보 저장 (중복된 값은 수정)
     if (teams.length > 0) {
-      await Teams.insertMany(teams);
-      console.log("성공적으로 크롤링 후 DB에 저장하였습니다.");
+      for (const team of teams) {
+        await Team.updateOne(
+          { name: team.name }, // 팀 이름으로 찾기
+          { $set: team }, // 팀 정보 업데이트
+          { upsert: true } // 팀이 없으면 새로 추가
+        );
+      }
+      console.log('성공적으로 크롤링 후 DB에 저장하였습니다.');
     } else {
-      console.log("저장할 팀 데이터가 없습니다.");
+      console.log('저장할 팀 데이터가 없습니다.');
     }
-
-    db.close(); // 데이터베이스 연결 종료
   } catch (error) {
-    console.log(`Error: ${error}`);
+    console.log(`크롤링 중 오류 발생: ${error}`);
+  } finally {
+    mongoose.connection.close(); // MongoDB 연결 종료
   }
 };
 
+// 크롤링 실행
 crawlAndSaveTeams();

@@ -47,7 +47,7 @@
       <h2><%= team.name %></h2>
       <p><%= team.city %></p>
       <p><%= team.region %></p>
-      <button onclick="showTeam('<%= %>')">Show Team</button>
+      <button onclick="location.href='https://www.nba.com/' + '<%= team.name.split(` `).pop().toLowerCase() %>'">Show Team</button>
       <button class="edit-button" onclick="location.href='/teams/<%= team._id %>/edit'">Edit</button>
       <button onclick="if(confirm('정말로 삭제하시겠습니까?')){location.href='/teams/<%= team._id %>/delete';}">Delete</button>
     </div>  
@@ -55,33 +55,3 @@
 </div>
 
 <div id="best5-container"></div>
-
-<!-- <script>//팀의 best 5
-  function showBest5(teamName) {
-    const best5Data = [
-      { name: "Player 1", position: "Position 1" },
-      { name: "Player 2", position: "Position 2" },
-      { name: "Player 3", position: "Position 3" },
-      { name: "Player 4", position: "Position 4" },
-      { name: "Player 5", position: "Position 5" }
-    ];
-
-    const best5Container = document.getElementById("best5-container");
-    best5Container.innerHTML = ""; // 이전에 표시된 Best 5 데이터를 초기화
-
-    const teamBest5 = document.createElement("div");
-    teamBest5.classList.add("best5");
-
-    const teamNameElement = document.createElement("h3");
-    teamNameElement.textContent = teamName;
-    teamBest5.appendChild(teamNameElement);
-
-    best5Data.forEach(function(player) {
-      const playerElement = document.createElement("p");
-      playerElement.textContent = `${player.name} (${player.position})`;
-      teamBest5.appendChild(playerElement);
-    });
-
-    best5Container.appendChild(teamBest5);
-  } -->
-</script>
